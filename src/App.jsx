@@ -3,6 +3,7 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
+import { Header, Footer } from "./components";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,10 +20,16 @@ function App() {
         }
       })
       .finally(() => setLoading(false));
-  }, []);
+  });
 
   return !loading ? (
-    <div className="min-h-sc"> this is blog website</div>
+    <div className="w-full flex flex-wrap bg-green-300">
+      <div className="w-full ">
+        <Header />
+        <main>{/* <Outlet/> */}</main>
+        <Footer />
+      </div>
+    </div>
   ) : null;
 }
 
