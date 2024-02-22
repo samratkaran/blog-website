@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const authStatus = useSelector((state) => {
-    state.auth.status;
+   state.authStatus
   });
   const navigate = useNavigate();
 
