@@ -26,7 +26,7 @@ function App() {
     <div className="w-full flex flex-wrap bg-green-300">
       <div className="w-full ">
         <Header />
-        <main>{/* <Outlet/> */}</main>
+        <main></main>
         <Footer />
       </div>
     </div>
