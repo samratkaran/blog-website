@@ -2,11 +2,10 @@ import { Container, Logo, LogoutButton } from "../index";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
-const Header = () => {
-  const authStatus = useSelector((state) => {
-   state.authStatus
-  });
+function Header() {
+  const authStatus = useSelector((state) => state.status);
   const navigate = useNavigate();
 
   const navItems = [
@@ -42,31 +41,34 @@ const Header = () => {
       <Container>
         <nav className="flex">
           <div className="mr-4">
-            <Link to="/"></Link>
-            <Logo width="70px"></Logo>
+            <Link to="/">
+              <Logo width="70px" />
+            </Link>
           </div>
           <ul className="flex ml-auto">
-            {navItems.map((item) => 
-            item.active ? (
-              <li key={item.name}>
-              <button
-              onClick={()=>{navigate(item.slug)}}
-                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-                >{item.name}</button>
-
-              </li>
-            ) : null
-            
+            {navItems.map((item) =>
+              item.active ? (
+                <li key={item.name}>
+                  <button
+                    onClick={() => navigate(item.slug)}
+                    className="inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ) : null
             )}
-            {authStatus && (<li>
-             <LogoutButton/>
-            </li>)}
+            {authStatus && (
+              <li>
+                <LogoutButton />
+              </li>
+            )}
           </ul>
-
         </nav>
       </Container>
     </header>
   );
-};
+}
 
 export default Header;
+// chnages
