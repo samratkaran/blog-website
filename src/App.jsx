@@ -26,7 +26,9 @@ function App() {
     <div className="w-full flex flex-wrap bg-green-300">
       <div className="w-full ">
         <Header />
-        <main></main>
+        <main>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi perferendis, corporis recusandae animi dolor commodi vel culpa aperiam nostrum dignissimos ut accusamus reiciendis, quasi iste assumenda molestiae fugit tenetur impedit!
+        </main>
         <Footer />
       </div>
     </div>

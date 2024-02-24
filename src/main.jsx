@@ -10,6 +10,7 @@ import AllPost from './pages/AllPost.jsx'
 import AddPost from './pages/AddPost.jsx'
 import EditPost from './pages/EditPost.jsx'
 import Post from './pages/Post.jsx'
+console.log("need to be edit")
 
 
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             path: "/all-posts",
             element: (
                 <AuthLayout authentication>
-                    {" "}
+                   
                     <AllPost />
                 </AuthLayout>
             ),
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             path: "/add-post",
             element: (
                 <AuthLayout authentication>
-                    {" "}
+                   
                     <AddPost />
                 </AuthLayout>
             ),
@@ -81,5 +82,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={Store}>
    <RouterProvider router={router}/>
+
   </Provider>
 );
+
+
+// this part still need to be edit buttons are not working
